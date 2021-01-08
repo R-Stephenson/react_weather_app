@@ -4,7 +4,11 @@ import './App.css';
 export default function App() {
   return (
     <div className="App">
-     Weather App
+     <h1>Weather App</h1>
+     <footer>
+       This application was coded by <a href="" target="_blank">Romana Stephenson</a> and is{" "}<a href="https://github.com/R-Stephenson/react_weather_app" target="_blank">open-sourced on GitHub
+     </a>
+     </footer>
     </div>
   );
 }
