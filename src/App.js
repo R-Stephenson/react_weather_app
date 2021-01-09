@@ -13,9 +13,9 @@ export default function App() {
               href="https://www.linkedin.com/in/romana-stephenson-24767a103/"
               target="_blank" 
               rel="noreferrer">
-              Romana Stephenson
+              {" "}Romana Stephenson
             </a> 
-           and is{" "}
+           {" "}and is{" "}
             <a 
               href="https://github.com/R-Stephenson/react_weather_app"
               target="_blank"
