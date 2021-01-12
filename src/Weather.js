@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Loader from 'react-loader-spinner'
 import WeatherInfo from "./WeatherInfo.js";
+import WeatherForecast from "./WeatherForecast.js";
 import axios from "axios";
 import "./Weather.css";
 
@@ -10,7 +11,7 @@ export default function Weather(props) {
 
     
     function handleResponse (response){
-            setWeatherData({
+        setWeatherData({
             ready: true,
             city: response.data.name,
             date: new Date(response.data.dt * 1000),
@@ -21,77 +22,65 @@ export default function Weather(props) {
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
         });
-        
     }
 
-function search(){
-const apiKey = "3e1b3b8411774a6a5d3ce0ee0f1a08dc";
-   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-   axios.get(apiUrl).then(handleResponse);
-}
+    function search(){
+        const apiKey = "3e1b3b8411774a6a5d3ce0ee0f1a08dc";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+    }
 
     function handleSubmit(event){
         event.preventDefault();
         search();
-
     }
 
     function handleCityChange(event){
         setCity(event.target.value);
     }
     
-    
     if (weatherData.ready) {
         return (
-        <div className="Weather">
-            <form onSubmit={handleSubmit}>
-                <div className="container">
-                <div className="row">
-                     <div className="col-9">
-                        <input 
-                        type="Search" 
-                        placeholder="Enter a City..." 
-                        className="form-control"
-                        autoFocus="on" 
-                        onChange={handleCityChange}/>
-                         
-                   </div>
-                   <div className="col-3">
-                        <input 
-                        type="submit" 
-                        value="Search" 
-                        className="btn btn-primary w-100" />
+            <div className="Weather">
+                <form onSubmit={handleSubmit}>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-9">
+                                <input 
+																	type="Search" 
+																	placeholder="Enter a City..." 
+																	className="form-control"
+																	autoFocus="on" 
+																	onChange={handleCityChange}
+                                />
+                            </div>
+                            <div className="col-3">
+                                 <input 
+																	type="submit" 
+																	value="Search" 
+																	className="btn btn-primary w-100" 
+                                />
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-            </form>
-            < WeatherInfo data={weatherData}/>
-          
-            
+                </form>
+                < WeatherInfo data={weatherData} />
+								< WeatherForecast city={weatherData.city} />
             </div>
-    );
-    } else {
-    
-search();
-    return ( 
-         <div className="loadingPage">
-          <h2>Loading {" "}</h2>
-           
-            <Loader
-             type="ThreeDots"
-             color="#5bc1ff"
-             height={7.5}
-             width={50}
-             timeout={30000} //3 secs
- 
-            />
-          </div>
-         
-
-        
-    )
-    }
-
-   
-    
+        );
+    } else {    
+    search();
+			return ( 
+				<div className="loadingPage">
+					<h2>Loading {" "}</h2>
+						<Loader
+							type="ThreeDots"
+							color="#5bc1ff"
+							height={7.5}
+							width={50}
+							timeout={30000} //30 secs
+						/>
+				</div>
+			)
+  }
 }
