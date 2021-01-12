@@ -66,3 +66,9 @@
   line-height: 1;
   top: -34px;
 }
+
+.loadingPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
