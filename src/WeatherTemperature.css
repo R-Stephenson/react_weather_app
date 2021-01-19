@@ -1,0 +1,8 @@
+.WeatherTemperature a {
+  color: #e08616;
+}
+
+.WeatherTemperature a:hover {
+  color: #e08616;
+  text-decoration: none;
+}

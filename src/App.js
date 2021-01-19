@@ -8,12 +8,11 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Cardiff" />
         <footer>
-          This application was coded by 
-            <a 
+          This application was coded by{" "}<a 
               href="https://www.linkedin.com/in/romana-stephenson-24767a103/"
               target="_blank" 
               rel="noreferrer">
-              {" "}Romana Stephenson
+            Romana Stephenson
             </a> 
             {" "}and is{" "}
             <a 

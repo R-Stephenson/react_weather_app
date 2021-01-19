@@ -30,27 +30,39 @@
 }
 
 .Weather li {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 100;
   line-height: 19px;
   list-style: none;
 }
 
 .Weather canvas {
-  margin: 10px auto;
+  margin: 10px 0 0 6px;
+  width: 40px;
+  height: 40px;
 }
 
 .Weather .col-9 {
   padding: 0;
 }
 
+.Weather .col-7 {
+  padding: 0 0 0 6px;
+}
+
+.Weather .col-5 {
+  padding: 0 0 0 6px;
+}
+
 .Weather .col-3 {
   padding: 0;
+  text-align: center;
+  font-size: 14px;
 }
 
 .Weather .temperature {
   color: rgb(32, 33, 36);
-  font-size: 64px;
+  font-size: 52px;
   line-height: 64px;
   font-weight: 400px;
   margin-left: -1px;
@@ -58,15 +70,28 @@
 
 .Weather .unit {
   color: rgb(32, 33, 36);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400px;
   position: relative;
   line-height: 1;
-  top: -34px;
+  top: -26px;
+  margin-left: -2px;
 }
 
 .loadingPage {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Weather .btn-primary {
+  padding: 6px 4px;
+  color: #fff;
+  background-color: #e0881a;
+  border-color: #e08616;
+  border-radius: 0px 4px 4px 0;
+}
+
+.Weather .form-control {
+  border-radius: 4px 0px 0px 4px;
 }
