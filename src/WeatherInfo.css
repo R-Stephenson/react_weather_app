@@ -1,3 +1,47 @@
+.WeatherInfo h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 10px 0 5px 0;
+  line-height: 29px;
+  text-align: center;
+}
+
+.WeatherInfo ul {
+  margin: 0;
+  padding: 0;
+}
+
+.WeatherInfo li {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+}
+
+.WeatherInfo .descriptionTime {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 19px;
+  text-align: center;
+}
+
+.WeatherInfo .description {
+  font-weight: 500;
+  color: #e0881a;
+}
+
+.WeatherInfo .time {
+  margin-top: 4px 0 12px 0;
+}
+
+.WeatherInfo .col-7 {
+  padding: 0 0 0 6px;
+}
+
 .WeatherInfo .mainIcon {
   margin-left: 5px;
+}
+
+.Weather .col-5 {
+  padding: 0 0 0 6px;
 }

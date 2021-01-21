@@ -6,3 +6,21 @@
   color: #e08616;
   text-decoration: none;
 }
+
+.WeatherTemperature .temperature {
+  color: rgb(32, 33, 36);
+  font-size: 52px;
+  line-height: 64px;
+  font-weight: 400px;
+  margin-left: 1px;
+}
+
+.WeatherTemperature .unit {
+  color: rgb(32, 33, 36);
+  font-size: 14px;
+  font-weight: 400px;
+  position: relative;
+  line-height: 1;
+  top: -26px;
+  margin-left: -2px;
+}

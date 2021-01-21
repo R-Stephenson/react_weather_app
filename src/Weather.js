@@ -4,12 +4,12 @@ import WeatherInfo from "./WeatherInfo.js";
 import WeatherForecast from "./WeatherForecast.js";
 import axios from "axios";
 import "./Weather.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Weather(props) {
     const [city, setCity] = useState(props.defaultCity);
     const [weatherData, setWeatherData] = useState({ready: false});
 
-    
     function handleResponse (response){
         setWeatherData({
             ready: true,
@@ -40,26 +40,58 @@ export default function Weather(props) {
     }
     
     if (weatherData.ready) {
+      
+    function refreshPage() {
+    window.location.reload(false);
+    }
+
+    function userPosition() {
+    navigator.geolocation.getCurrentPosition(searchCurrentLocation)
+    }
+
+    function searchCurrentLocation(position) {
+    const apiKey = "3e1b3b8411774a6a5d3ce0ee0f1a08dc";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+    }
+
         return (
             <div className="Weather">
                 <form onSubmit={handleSubmit}>
                     <div className="container">
                         <div className="row">
-                            <div className="col-9">
+                            <div className="col-6 searchBar">
                                 <input 
 																	type="Search" 
-																	placeholder="Enter a City..." 
+																	placeholder="Search..." 
 																	className="form-control"
-																	autoFocus="on" 
 																	onChange={handleCityChange}
                                 />
                             </div>
-                            <div className="col-3">
-                                 <input 
-																	type="submit" 
-																	value="Search" 
-																	className="btn btn-primary w-100" 
-                                />
+                            <div className="col-4">
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button
+                                  type="submit"
+                                  value="search"
+                                  class="btn btn-secondary searchIcon"
+                                >
+                                  <FontAwesomeIcon icon="search" />
+                                </button>
+                                <button
+                                  type="submit"
+                                  value="search"
+                                  class="btn btn-secondary locationIcon"
+                                  onClick={userPosition}
+                                 >
+                                  <FontAwesomeIcon icon="map-marker-alt" />
+                                </button>
+                                <button
+                                  class="btn btn-secondary refreshIcon"
+                                  onClick={refreshPage}
+                                >
+                                  <FontAwesomeIcon icon="redo" />
+                                </button>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -71,7 +103,7 @@ export default function Weather(props) {
     } else {    
     search();
 			return ( 
-				<div className="loadingPage">
+				<div className="loader">
 					<h2>Loading {" "}</h2>
 						<Loader
 							type="ThreeDots"

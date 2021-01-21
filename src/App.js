@@ -2,13 +2,22 @@ import React from "react";
 import Weather from "./Weather";
 import './App.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch, faRedo, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSearch, faRedo, faMapMarkerAlt)
+
 export default function App() {
+  
+  
   return (
+     
     <div className="App">
+       
       <div className="container">
         <Weather defaultCity="Cardiff" />
         <footer>
-          This application was coded by{" "}<a 
+          npm This application was coded by{" "}<a 
               href="https://www.linkedin.com/in/romana-stephenson-24767a103/"
               target="_blank" 
               rel="noreferrer">
