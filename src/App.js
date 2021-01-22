@@ -17,7 +17,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Cardiff" />
         <footer>
-          npm This application was coded by{" "}<a 
+          This application was coded by{" "}<a 
               href="https://www.linkedin.com/in/romana-stephenson-24767a103/"
               target="_blank" 
               rel="noreferrer">
@@ -28,8 +28,8 @@ export default function App() {
               href="https://github.com/R-Stephenson/react_weather_app"
               target="_blank"
               rel="noreferrer">
-              open-sourced on GitHub
-            </a>
+              open-sourced</a>{" "}on GitHub
+            
         </footer>
       </div>
     </div>

@@ -61,14 +61,14 @@ export default function Weather(props) {
                     <div className="container">
                         <div className="row">
                             <div className="col-6 searchBar">
-                                <input 
+                                <input
 																	type="Search" 
 																	placeholder="Search..." 
 																	className="form-control"
 																	onChange={handleCityChange}
                                 />
                             </div>
-                            <div className="col-4">
+                            <div className="col-6 buttons">
                               <div class="btn-group" role="group" aria-label="Basic example">
                                 <button
                                   type="submit"

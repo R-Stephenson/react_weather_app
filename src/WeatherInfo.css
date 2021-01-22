@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+.WeatherInfo small {
+  margin-bottom: 9px;
+}
+
 .WeatherInfo li {
   font-size: 14px;
   font-weight: 100;
